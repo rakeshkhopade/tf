@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    environment{
+        name = "rakesh"
+    }
+    stages{
+        stage("heelo"){
+            steps{
+                echo "hello there"
+            }
+        }
+        stage('prod'){
+            steps{
+                sh "echo hello there '${NAME}'"
+            }
+        }
+        stage('deployment'){
+            steps{
+                sh "echo present working directory is '${pwd}'"
+            }
+        }
+        
+    }
+}
